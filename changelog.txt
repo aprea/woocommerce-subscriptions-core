@@ -1,6 +1,6 @@
 *** WooCommerce Subscriptions Core Changelog ***
 
-2022-xx-xx - version 1.8.0
+2022-03-31 - version 1.8.0
 * Update: Switch to global functions to remove deprecation warnings originating from WooCommerce Blocks. PR#124
 
 2022-03-18 - version 1.7.0
