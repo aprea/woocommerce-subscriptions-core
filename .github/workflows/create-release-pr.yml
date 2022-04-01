@@ -47,7 +47,7 @@ jobs:
       - name: Get version
         id: get_version
         run: |
-          VERSION=$(sed -n '/version /s/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/p' changelog.txt | head -1)
+          VERSION=$(sed -n '/^= /s/^.*[^0-9]\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/p' changelog.txt | head -1)
 
           echo "::set-output name=VERSION::$(echo $VERSION)"
 
@@ -80,4 +80,8 @@ jobs:
           git commit -am "Version $VERSION"
           git push --set-upstream origin release/$VERSION
 
-          gh pr create --title "Version $VERSION" --body "Test 123"
+          echo "Picking up changelog for version '$VERSION'..."
+
+          CHANGELOG=$(awk -v ver="$VERSION" '/^= / { if (p) { exit }; if ($2 == ver) { p=1; next } } p && NF' changelog.txt)
+
+          gh pr create --title "Version $VERSION" --body "\`\`\`\n${CHANGELOG}\n\`\`\`"
