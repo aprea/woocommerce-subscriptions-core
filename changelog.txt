@@ -1,5 +1,8 @@
 *** WooCommerce Subscriptions Core Changelog ***
 
+= 1.9.0 - 2022-xx-xx =
+* Fix: Fake changelog entry.
+
 = 1.8.0 - 2022-04-04 =
 * Update: Switch to global functions to remove deprecation warnings originating from WooCommerce Blocks. PR#124
 
