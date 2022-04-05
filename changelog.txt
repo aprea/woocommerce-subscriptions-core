@@ -1,6 +1,6 @@
 *** WooCommerce Subscriptions Core Changelog ***
 
-= 1.9.0 - 2022-xx-xx =
+= 1.9.0 - 2022-04-05 =
 * Fix: Fake changelog entry.
 
 = 1.8.0 - 2022-04-04 =
